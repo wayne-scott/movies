@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="jumbotron">
+    <h1>Roles by Actor</h1>
+    <p class="lead"></p>
+</div>
+
+@if (Model.HaveActors)
+{
+    <ul class="list-group list-group-flush">
+        @foreach (var actor in Model.Actors)
+        {
+            <li class="list-group-item">
+                <div class="movies-group rounded">@Html.DisplayFor(model => actor)</div></li>
+        }
+    </ul>
+}
+else
+{
+    <p>No roles or actors found?</p>
+}

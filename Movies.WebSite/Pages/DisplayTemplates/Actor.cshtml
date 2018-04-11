@@ -1,0 +1,12 @@
+﻿@model Models.Actor
+
+<h2>@Model.Name</h2>
+
+@if (Model.HasRoles)
+{
+    @Html.DisplayFor(model => model.Roles, "Roles")
+}
+else
+{
+    <p>@Model.Name hasn't had any roles yet.</p>
+}

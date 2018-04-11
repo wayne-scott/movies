@@ -1,0 +1,29 @@
+﻿@page "{actor?}"
+@model Actor.IndexModel
+@{
+    ViewData["Title"] = Model.Actor != null ? "Actor" : "Actors";
+}
+
+<div class="movies-group rounded">
+    @if (Model.Actor != null)
+    {
+        @Html.DisplayFor(model => model.Actor);
+    }
+    else if (Model.Actors != null)
+    {
+        <h1>Actors</h1>
+        <div class="list-group list-group-striped">
+            @foreach (var actor in Model.Actors)
+            {
+                <a asp-route-actor="@actor" class="list-group-item list-group-item-action">
+                    <span class="h4">@actor</span>
+                </a>
+            }
+        </div>
+    }
+    else
+    {
+        <h1>Actors</h1>
+        <p>@Model.Message</p>
+    }
+</div>

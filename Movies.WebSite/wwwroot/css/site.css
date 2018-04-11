@@ -1,0 +1,41 @@
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.movies-group {
+    background-color: aliceblue;
+    padding: 20px 20px 15px 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.movies-group table, .movies-group .list-group-striped {
+    background-color: #b2cce6
+}
+
+.movies-group table .thead-light th {
+    background-color: #859cb3
+}
+
+.movies-group .list-group-striped .list-group-item {
+    background-color: inherit;
+}
+
+.movies-group .list-group-striped .list-group-item.list-group-item-action:hover {
+    background-color: rgb(217, 230, 243);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.movies-group .table-striped tbody tr:nth-of-type(odd),
+.movies-group .list-group-striped .list-group-item:nth-of-type(odd) {
+    background-color: rgb(165, 201, 237);
+    background-color: rgba(255, 255, 255, 0.15);
+}
