@@ -42,9 +42,9 @@ namespace Movies.DAL
             }
         }
 
-        public DomainModel.Movies GetAllMovies()
+        public IMoviesContext GetAllMovies()
         {
-            var movies = new DomainModel.Movies();
+            var movies = new MoviesContext();
             if (!_memoryCache.TryGetValue(EndpointUrl, out List<Movie> listOfMovies))
             {
                 var task = HttpClient.GetAsync(EndpointUrl)

@@ -37,7 +37,7 @@ namespace Movies.WebSite.Tests.Models
                     }
                 }
             };
-            var movies = new DomainModel.Movies();
+            var movies = new DAL.MoviesContext();
             movies.Initialise(listOfMovies);
 
             var modelFactory = new ModelFactory();
@@ -53,7 +53,7 @@ namespace Movies.WebSite.Tests.Models
         [TestMethod]
         public void CreateListOfActors()
         {
-            var movies = new DomainModel.Movies();
+            var movies = new DAL.MoviesContext();
 
             var modelFactory = new ModelFactory();
             var actors = modelFactory.Create(new List<string>{ "Wil Wheaton", "Eddie Murphy", "Judge Reinhold" }, movies);

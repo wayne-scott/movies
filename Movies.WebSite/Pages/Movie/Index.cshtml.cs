@@ -21,7 +21,7 @@ namespace Movies.WebSite.Pages.Movie
             var movies = MoviesRepository.GetAllMovies();
             if (!string.IsNullOrEmpty(movie))
             {
-                if (movies?.Actors.Count > 0)
+                if (movies?.AllMovies.Count > 0)
                 {
                     Movie = movies.AllMovies.FirstOrDefault(m => m.Name == movie);
                 }
@@ -33,7 +33,7 @@ namespace Movies.WebSite.Pages.Movie
             }
             else
             {
-                if (movies?.Actors.Count > 0)
+                if (movies?.AllMovies.Count > 0)
                 {
                     Movies = movies.AllMovies.Select(m => m.Name).OrderBy(movieName => movieName).ToList();
                 }

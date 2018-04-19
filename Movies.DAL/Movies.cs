@@ -1,13 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using Movies.DomainModel;
+using System.Collections.Generic;
 using System.Linq;
 
-namespace Movies.DomainModel
+namespace Movies.DAL
 {
-    public class Movies
+    public class MoviesContext : IMoviesContext
     {
         private List<string> _actors;
 
-        public Movies()
+        public MoviesContext()
         {
             AllMovies = new List<Movie>();
         }

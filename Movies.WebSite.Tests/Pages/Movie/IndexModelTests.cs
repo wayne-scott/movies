@@ -14,7 +14,7 @@ namespace Movies.WebSite.Tests.Pages.Movie
         public void OnGet()
         {
             var repository = Substitute.For<IMoviesRepository>();
-            var movies = new DomainModel.Movies();
+            var movies = new DAL.MoviesContext();
             movies.Initialise(new List<DomainModel.Movie>
             {
                 new DomainModel.Movie
@@ -40,7 +40,7 @@ namespace Movies.WebSite.Tests.Pages.Movie
         public void OnGetNoData()
         {
             var repository = Substitute.For<IMoviesRepository>();
-            repository.GetAllMovies().Returns(new DomainModel.Movies());
+            repository.GetAllMovies().Returns(new DAL.MoviesContext());
 
             var indexModel = new IndexModel(repository);
             Assert.IsNotNull(indexModel);
@@ -56,7 +56,7 @@ namespace Movies.WebSite.Tests.Pages.Movie
         public void OnGetWithMovieName()
         {
             var repository = Substitute.For<IMoviesRepository>();
-            var movies = new DomainModel.Movies();
+            var movies = new DAL.MoviesContext();
             movies.Initialise(new List<DomainModel.Movie>
             {
                 new DomainModel.Movie
@@ -82,7 +82,7 @@ namespace Movies.WebSite.Tests.Pages.Movie
         public void OnGetWithActorNameNoMatch()
         {
             var repository = Substitute.For<IMoviesRepository>();
-            var movies = new DomainModel.Movies();
+            var movies = new DAL.MoviesContext();
             movies.Initialise(new List<DomainModel.Movie>
             {
                 new DomainModel.Movie
