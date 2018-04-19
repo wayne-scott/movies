@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using Movies.DAL;
+using Movies.WebSite.Models;
 
-namespace Movies.WebSite.Models
+namespace Movies.WebSite.Pages
 {
     public class BasePageModel : PageModel
     {

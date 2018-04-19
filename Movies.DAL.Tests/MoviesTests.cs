@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Movies.DomainModel;
 
-namespace Movies.DomainModel.Tests
+namespace Movies.DAL.Tests
 {
     [TestClass]
     public class MoviesTests
@@ -10,14 +11,14 @@ namespace Movies.DomainModel.Tests
         [TestMethod]
         public void CreateMoviesObject()
         {
-            var movies = new Movies();
+            var movies = new MoviesContext();
             Assert.IsNotNull(movies);
         }
 
         [TestMethod]
         public void ReadAndWriteMovieProperties()
         {
-            var movies = new Movies();
+            var movies = new MoviesContext();
             Assert.AreEqual(0, movies.Actors.Count);
             Assert.AreEqual(0, movies.AllMovies.Count);
             Assert.AreEqual(0, movies.RolesByActor("Eddie Murphy").Count);
@@ -29,9 +30,9 @@ namespace Movies.DomainModel.Tests
             var role = new Role();
             var movie = new Movie();
             movie.Roles.Add(role);
-            var listOfMovies = new List<Movie> {movie};
+            var listOfMovies = new List<Movie> { movie };
 
-            var movies = new Movies();
+            var movies = new MoviesContext();
             movies.Initialise(listOfMovies);
 
             Assert.AreEqual(1, movies.AllMovies.Count);
@@ -53,7 +54,7 @@ namespace Movies.DomainModel.Tests
                 }
             };
 
-            var movies = new Movies();
+            var movies = new MoviesContext();
             movies.Initialise(listOfMovies);
 
             Assert.AreEqual(1, movies.Actors.Count);
@@ -81,7 +82,7 @@ namespace Movies.DomainModel.Tests
                 }
             };
 
-            var movies = new Movies();
+            var movies = new MoviesContext();
             movies.Initialise(listOfMovies);
 
             Assert.AreEqual(1, movies.Actors.Count);
@@ -109,7 +110,7 @@ namespace Movies.DomainModel.Tests
                 }
             };
 
-            var movies = new Movies();
+            var movies = new MoviesContext();
             movies.Initialise(listOfMovies);
 
             Assert.AreEqual(2, movies.RolesByActor("Eddie Murphy").Count);

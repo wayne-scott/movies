@@ -12,7 +12,7 @@ namespace Movies.WebSite.Tests.Pages
         public void OnGet()
         {
             var repository = Substitute.For<IMoviesRepository>();
-            repository.GetAllMovies().Returns(new DomainModel.Movies());
+            repository.GetAllMovies().Returns(new DAL.MoviesContext());
 
             var indexModel = new IndexModel(repository);
             Assert.IsNotNull(indexModel);
@@ -27,7 +27,7 @@ namespace Movies.WebSite.Tests.Pages
         public void OnGetNoData()
         {
             var repository = Substitute.For<IMoviesRepository>();
-            DomainModel.Movies movies = null;
+            DAL.MoviesContext movies = null;
             repository.GetAllMovies().Returns(movies);
 
             var indexModel = new IndexModel(repository);
