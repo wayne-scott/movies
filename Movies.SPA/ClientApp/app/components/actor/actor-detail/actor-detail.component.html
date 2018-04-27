@@ -1,0 +1,7 @@
+﻿<div *ngIf="actor">
+    <h2>{{ actor.name }}</h2>
+
+    <role-table *ngIf="actor.hasRoles" [roles]="actor.roles"></role-table>
+    <p *ngIf="!actor.hasRoles">{{ actor.name }} hasn't had any roles yet.</p>
+</div>
+<p *ngIf="!actor">Loading ...</p>

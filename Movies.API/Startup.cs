@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Movies.DAL;
+using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace Movies.API
 {
@@ -20,7 +22,10 @@ namespace Movies.API
         {
             services.AddScoped<IMoviesRepository, HttpMoviesRepository>();
             services.AddMemoryCache();
-            services.AddMvc();
+            services.AddMvc().AddJsonOptions(options => {
+                options.SerializerSettings
+                       .ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -30,6 +35,9 @@ namespace Movies.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(builder =>
+                builder.WithOrigins(Configuration["AllowedOrigins"]));
 
             app.UseMvc();
         }

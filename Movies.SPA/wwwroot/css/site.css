@@ -1,0 +1,11 @@
+﻿body {
+    padding-top: 55px;
+    padding-bottom: 20px;
+}
+
+.movies-group {
+    background-color: aliceblue;
+    padding: 20px 20px 15px 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,7 @@
+﻿<div *ngIf="movie">
+    <h2>{{ movie.name }}</h2>
+
+    <role-table *ngIf="movie.hasRoles" [roles]="movie.roles"></role-table>
+    <p *ngIf="!movie.hasRoles">{{ movie.name }} doesn't have any roles.</p>
+</div>
+<p *ngIf="!movie">Loading ...</p>

@@ -1,0 +1,11 @@
+﻿<div *ngIf="movies">
+    <div class="movies-group rounded">
+        <h1>Movies</h1>
+        <div class="list-group list-group-striped">
+            <a class="list-group-item list-group-item-action" routerLink="/movie/{{ movie }}" routerLinkActive="active" *ngFor="let movie of movies">
+                <span class="h4">{{ movie }}</span>
+            </a>
+        </div>
+    </div>
+</div>
+<p *ngIf="!movies">No movies found?</p>

@@ -30,6 +30,9 @@ namespace Movies.DomainModel
 
         public Movie Movie { get; set; }
 
+        [JsonProperty("movie", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public string MovieName { get { return Movie.Name; } }
+
         /// <summary>
         /// Implement IEquatable so that the object is correctly compared.
         /// </summary>

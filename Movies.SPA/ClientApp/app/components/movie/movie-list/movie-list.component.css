@@ -1,0 +1,17 @@
+﻿.list-group-striped {
+    background-color: #b2cce6
+}
+
+.list-group-striped .list-group-item {
+    background-color: inherit;
+}
+
+.list-group-striped .list-group-item.list-group-item-action:hover {
+    background-color: rgb(217, 230, 243);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.list-group-striped .list-group-item:nth-of-type(odd) {
+    background-color: rgb(165, 201, 237);
+    background-color: rgba(255, 255, 255, 0.15);
+}

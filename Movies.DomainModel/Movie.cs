@@ -30,5 +30,8 @@ namespace Movies.DomainModel
         public HashSet<Role> Roles { get; set; }
 
         public bool HasRoles => Roles.Count > 0;
+
+        [JsonProperty("hasRoles", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public bool GetHasRoles { get { return HasRoles; } }
     }
 }

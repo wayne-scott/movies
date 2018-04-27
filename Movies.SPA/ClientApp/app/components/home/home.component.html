@@ -1,0 +1,12 @@
+<div class="jumbotron">
+    <h1>Roles by Actor</h1>
+    <p class="lead"></p>
+</div>
+<ul class="list-group list-group-flush">
+    <li class="list-group-item" *ngFor="let actor of actors">
+        <div class="movies-group rounded">
+            <actor-detail [actor]="actor"></actor-detail>
+        </div>
+    </li>
+</ul>
+<p *ngIf="!actors">No roles or actors found?</p>

@@ -1,0 +1,19 @@
+﻿<h3>Roles</h3>
+
+<table class="table table-striped" *ngIf="roles">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col" class="bob">Character Name</th>
+            <th scope="col">Actor Name</th>
+            <th scope="col">Film</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let role of roles">
+            <td>{{ role.name }}</td>
+            <td><a routerLink="/actor/{{ role.actor }}" routerLinkActive="active">{{ role.actor }}</a></td>
+            <td><a routerLink="/movie/{{ role.movie }}" routerLinkActive="active">{{ role.movie }}</a></td>
+        </tr>
+    </tbody>
+</table>
+<p *ngIf="!roles">No roles found.</p>

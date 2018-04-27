@@ -22,7 +22,7 @@ namespace Movies.API.Controllers
             return NotFound();
         }
 
-        // GET api/controller/actor
+        // GET api/movie/{movie}
         [HttpGet("{movie}")]
         public IActionResult Get(string movie)
         {

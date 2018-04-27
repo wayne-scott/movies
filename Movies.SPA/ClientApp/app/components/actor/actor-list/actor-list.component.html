@@ -1,0 +1,11 @@
+﻿<div *ngIf="actors">
+    <div class="movies-group rounded">
+        <h1>Actors</h1>
+        <div class="list-group list-group-striped">
+            <a class="list-group-item list-group-item-action" routerLink="/actor/{{ actor }}" routerLinkActive="active" *ngFor="let actor of actors">
+                <span class="h4">{{ actor }}</span>
+            </a>
+        </div>
+    </div>
+</div>
+<p *ngIf="!actors">No actors found?</p>
