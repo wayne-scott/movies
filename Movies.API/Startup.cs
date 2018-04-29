@@ -4,7 +4,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Movies.DAL;
 using Newtonsoft.Json;
-using System.Diagnostics;
 
 namespace Movies.API
 {

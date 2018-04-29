@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <UserSecretsId>ed5f45da-ffb6-4efc-a8ce-c57a4afd1d53</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/67f77e70-2747-437e-9c09-13ddf8c64049/resourcegroups/ws-movies-api/providers/microsoft.insights/components/ws-movies-api</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/67f77e70-2747-437e-9c09-13ddf8c64049/resourcegroups/ws-movies-api/providers/microsoft.insights/components/ws-movies-api</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,17 +12,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Movies.DAL\Movies.DAL.csproj" />
     <ProjectReference Include="..\Movies.Models\Movies.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 
 </Project>

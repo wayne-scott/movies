@@ -26,6 +26,10 @@ namespace Movies.DAL
         {
             _configuration = configuration;
             _memoryCache = memoryCache;
+            if (!HttpClient.DefaultRequestHeaders.Contains("x-functions-key"))
+            {
+                HttpClient.DefaultRequestHeaders.Add("x-functions-key", ApiKey);
+            }
         }
 
         private string EndpointUrl
@@ -39,6 +43,20 @@ namespace Movies.DAL
                 }
 
                 return endpointUrl;
+            }
+        }
+
+        public string ApiKey
+        {
+            get
+            {
+                var apiKey = _configuration["ApiKey"];
+                if (string.IsNullOrEmpty(apiKey))
+                {
+                    throw new Exception("Missing configuration: ApiKey");
+                }
+
+                return apiKey;
             }
         }
 
